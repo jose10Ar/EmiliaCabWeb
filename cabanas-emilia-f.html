@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cabañas Emilia - Agua de Oro, Córdoba</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    /* HEADER MEJORADO */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 1rem 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .site-logo {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+      color: #2b6cb0;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .site-logo span {
+      color: #67c998;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #2c5282;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a:hover {
+      color: #67c998;
+    }
+
+    /* SECCIÓN CABAÑAS */
+    .cabanas-section {
+      background: linear-gradient(180deg, #ade9e0 0%, #ffffff 100%);
+    }
+
+    .cabanas-intro {
+      text-align: center;
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      color: #66c992;
+      margin-bottom: 50px;
+    }
+
+    .cabanas-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+      gap: 40px;
+      padding: 0 20px;
+    }
+
+    .cabana-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(103, 201, 152, 0.15);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 2px solid #e8f8f1;
+    }
+
+    .cabana-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 50px rgba(103, 201, 152, 0.25);
+    }
+
+    .cabana-header {
+      background: linear-gradient(135deg, #67c998 0%, #4ea876 100%);
+      padding: 30px;
+      text-align: center;
+      color: white;
+    }
+
+    .cabana-icon {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .cabana-header h3 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+      margin: 10px 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .cabana-capacity {
+      font-size: 1rem;
+      opacity: 0.95;
+      font-weight: 500;
+      margin-top: 5px;
+    }
+
+    .cabana-features {
+      padding: 30px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 1.05rem;
+      color: #2c5282;
+      transition: all 0.3s;
+    }
+
+    .feature-item:last-child {
+      border-bottom: none;
+    }
+
+    .feature-item:hover {
+      padding-left: 8px;
+      color: #67c998;
+    }
+
+    .feature-item .check {
+      color: #67c998;
+      font-weight: bold;
+      font-size: 1.3rem;
+      min-width: 20px;
+    }
+
+    .cabanas-cta {
+      text-align: center;
+      margin-top: 50px;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, rgba(103, 201, 152, 0.1) 0%, rgba(78, 168, 118, 0.1) 100%);
+      border-radius: 20px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cabanas-cta p {
+      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+      color: #2c5282;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    /* SECCIÓN SERVICIOS */
+    .servicios-section {
+      background: #ffffff;
+    }
+
+    .servicios-intro {
+      text-align: center;
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      color: #4ea876;
+      margin-bottom: 50px;
+    }
+
+    .servicios-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    .servicio-item {
+      text-align: center;
+      padding: 30px 20px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s;
+      border: 2px solid #f0f0f0;
+    }
+
+    .servicio-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(103, 201, 152, 0.2);
+      border-color: #67c998;
+    }
+
+    .servicio-icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      color: #67c998;
+      transition: all 0.3s;
+    }
+
+    .servicio-item:hover .servicio-icon {
+      color: #4ea876;
+      transform: scale(1.1);
+    }
+
+    .servicio-item h4 {
+      color: #2c5282;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    /* SECCIÓN PRECIOS */
+    .precios-section {
+      background: linear-gradient(180deg, #f8fffe 0%, #ffffff 100%);
+    }
+
+    .precios-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+      gap: 40px;
+      padding: 0 20px;
+    }
+
+    .precios-card,
+    .politicas-card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      border: 2px solid #e8f8f1;
+    }
+
+    .precios-card h3,
+    .politicas-card h3 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+      color: #67c998;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .precio-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      margin-bottom: 15px;
+      background: linear-gradient(135deg, #f8fffe 0%, #ffffff 100%);
+      border-radius: 12px;
+      border-left: 4px solid #67c998;
+    }
+
+    .precio-personas {
+      font-size: 1.2rem;
+      color: #2c5282;
+      font-weight: 600;
+    }
+
+    .precio-valor {
+      font-size: 1.5rem;
+      color: #67c998;
+      font-weight: bold;
+    }
+
+    .politica-item {
+      display: flex;
+      gap: 15px;
+      padding: 20px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .politica-item:last-of-type {
+      border-bottom: none;
+    }
+
+    .politica-icon {
+      font-size: 1.2rem;
+      min-width: 40px;
+    }
+
+    .politica-item p {
+      color: #2c5282;
+      line-height: 1.6;
+      text-align: left;
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .politicas-importantes {
+      margin-top: 30px;
+      padding: 25px;
+      background: #fff3cd;
+      border-radius: 12px;
+      border-left: 4px solid #ffc107;
+    }
+
+    .politicas-importantes h4 {
+      color: #856404;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    .politicas-importantes ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .politicas-importantes li {
+      color: #856404;
+      padding: 8px 0;
+      padding-left: 25px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .politicas-importantes li::before {
+      content: '•';
+      position: absolute;
+      left: 8px;
+      font-size: 1.2rem;
+      color: #ffc107;
+    }
+
+    .precios-cta {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    /* HERO SECTION RESPONSIVE */
+    .landing-container {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 20px 40px;
+    }
+
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+    }
+
+    .background-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+    }
+
+    .background-slide.active {
+      opacity: 1;
+    }
+
+    .background-slide:nth-child(1) {
+      background-image: url("Imagenes/AfueraFlores.jpg");
+    }
+
+    .background-slide:nth-child(2) {
+      background-image: url("Imagenes/VistaPiedra.jpg");
+    }
+
+    .background-slide:nth-child(3) {
+      background-image: url("Imagenes/Pileta3.jpg");
+    }
+
+    .background::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: -1;
+    }
+
+    .content {
+      text-align: center;
+      color: white;
+      animation: fadeIn 2s ease-in;
+      padding: 40px 30px;
+      max-width: 90%;
+      width: 100%;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .name {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 400;
+      margin-bottom: 10px;
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+      letter-spacing: 0.1em;
+      color: #67c998;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(1.5rem, 4vw, 3.5rem);
+      font-weight: 400;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      letter-spacing: 0.1em;
+      margin-top: 5px;
+      animation: fadeInOut 3s ease-in-out infinite;
+      color: #b5f1c4;
+    }
+
+    @keyframes fadeInOut {
+      0%, 100% {
+        opacity: 0.8;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+    }
+
+    .location {
+      font-family: serif;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 400;
+      margin-top: 20px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      opacity: 0.95;
+      animation: slideIn 2s ease-out;
+      color: #ffffff;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 0.95;
+        transform: translateX(0);
+      }
+    }
+
+    .divider {
+      width: min(250px, 80%);
+      height: 2px;
+      background: linear-gradient(to right, transparent, white, transparent);
+      margin: 20px auto;
+      opacity: 0.7;
+      animation: expand 3s ease-in-out infinite;
+    }
+
+    @keyframes expand {
+      0%, 100% {
+        width: min(250px, 80%);
+        opacity: 0.7;
+      }
+      50% {
+        width: min(300px, 90%);
+        opacity: 1;
+      }
+    }
+
+    /* SECCIONES */
+    .section {
+      padding: 60px 20px;
+    }
+
+    /* INTRO SECTION CON FONDO */
+    .intro-section {
+      position: relative;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url("Imagenes/Afuera.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      padding: 100px 20px;
+    }
+
+    .intro-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(103, 201, 152, 0.85) 0%, rgba(44, 82, 130, 0.75) 100%);
+      z-index: 1;
+    }
+
+    .intro-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      text-align: center;
+      color: white;
+    }
+
+    .intro-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      color: white;
+      margin-bottom: 30px;
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 1.5s ease-in;
+      letter-spacing: 0.05em;
+    }
+
+    .intro-text {
+      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+      line-height: 1.8;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+      margin-bottom: 40px;
+      font-weight: 300;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-large {
+      padding: 15px 40px;
+      font-size: 1.1rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-large:hover {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-title {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      margin-bottom: 30px;
+      text-align: center;
+      color: #2c5282;
+    }
+
+    .section p {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      color: rgb(53, 70, 21);
+      font-size: clamp(1.1rem, 2.5vw, 1.875rem);
+      line-height: 1.6;
+      padding: 0 20px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 12px 30px;
+      margin-top: 20px;
+      background: #67c998;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    .btn-primary:hover {
+      background: #4ea876;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(103, 201, 152, 0.4);
+    }
+
+    /* GALERÍA RESPONSIVE */
+    .gallery-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    .gallery-item {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+      cursor: pointer;
+      transition: transform 0.3s;
+      aspect-ratio: 4/3;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* MODAL RESPONSIVE */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 2000;
+      padding: 20px;
+    }
+
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      max-width: 90vw;
+      max-height: 80vh;
+      position: relative;
+    }
+
+    .modal-content img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 2001;
+    }
+
+    .modal-counter {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 8px 16px;
+      border-radius: 20px;
+      z-index: 2001;
+    }
+
+    .modal-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 30px;
+      cursor: pointer;
+      z-index: 2001;
+    }
+
+    .modal-nav.prev {
+      left: 20px;
+    }
+
+    .modal-nav.next {
+      right: 20px;
+    }
+
+    /* SLIDER PLACEHOLDER RESPONSIVE */
+    #slider-placeholder {
+      padding: 40px 20px;
+    }
+
+    #slider-placeholder > div {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    #slider-placeholder .slider-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.12);
+      min-height: 300px;
+      height: auto;
+    }
+
+    #slider-placeholder picture {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    #slider-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    #slider-placeholder .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.15));
+    }
+
+    #slider-placeholder .content-box {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      min-height: 300px;
+      padding: 30px;
+      color: #fff;
+    }
+
+    #slider-placeholder h3 {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: #fff;
+      margin: 0 0 10px;
+      text-shadow: 2px 3px 12px rgba(0, 0, 0, 0.6);
+    }
+
+    #slider-placeholder p {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(1.2rem, 3vw, 2.5rem);
+      color: #fff;
+      margin: 0 0 20px;
+      text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    /* WHATSAPP FORM RESPONSIVE */
+    .wa-section {
+      background: linear-gradient(135deg, #7fdbad 0%, #4ea876 100%);
+      padding: 60px 20px;
+    }
+
+    .wa-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .wa-form {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .wa-form h3 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      margin-bottom: 20px;
+      color: #2c5282;
+    }
+
+    .wa-field {
+      margin-bottom: 20px;
+    }
+
+    .wa-field label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #2c5282;
+    }
+
+    .wa-field input,
+    .wa-field textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+
+    .wa-field textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .wa-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .wa-btn {
+      flex: 1;
+      min-width: 150px;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .wa-btn:not(.secondary) {
+      background: #25D366;
+      color: white;
+    }
+
+    .wa-btn:not(.secondary):hover {
+      background: #20BA5A;
+    }
+
+    .wa-btn.secondary {
+      background: #f0f0f0;
+      color: #333;
+    }
+
+    .wa-btn.secondary:hover {
+      background: #e0e0e0;
+    }
+
+    .wa-info {
+      color: white;
+      padding: 20px;
+    }
+
+    .wa-info h4 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .wa-info p {
+      margin-bottom: 10px;
+      line-height: 1.6;
+      text-align: left;
+      color: white;
+    }
+
+    /* FOOTER RESPONSIVE */
+    .site-footer {
+      background: #2c5282;
+      color: rgb(219, 214, 214);
+      padding: 40px 20px 20px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .footer-grid h3,
+    .footer-grid h4 {
+      margin-bottom: 15px;
+      font-size: 1.25rem;
+    }
+
+    .footer-logo {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+      color: #67c998;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    .footer-grid ul {
+      list-style: none;
+    }
+
+    .footer-grid a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-grid a:hover {
+      color: #67c998;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s;
+      font-size: 1.2rem;
+    }
+
+    .social-links a:hover {
+      background: #67c998;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(103, 201, 152, 0.4);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 20px;
+      text-align: center;
+    }
+
+    .anchor-offset {
+      scroll-margin-top: 100px;
+    }
+
+    /* MEDIA QUERIES ESPECÍFICAS */
+    @media (max-width: 768px) {
+      .header-inner {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .nav-links {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .landing-container {
+        min-height: 100vh;
+        padding-top: 120px;
+      }
+
+      .content {
+        padding: 30px 20px;
+      }
+
+      .intro-section {
+        min-height: 50vh;
+        padding: 80px 20px;
+        background-attachment: scroll;
+      }
+
+      .intro-title {
+        margin-bottom: 20px;
+      }
+
+      .intro-text {
+        margin-bottom: 30px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+        gap: 15px;
+      }
+
+      .servicios-grid {
+        grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
+        gap: 20px;
+      }
+
+      .precios-container {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+      }
+
+      .modal-nav.prev {
+        left: 10px;
+      }
+
+      .modal-nav.next {
+        right: 10px;
+      }
+
+      .wa-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .site-header {
+        padding: 0.75rem 0;
+      }
+
+      .site-logo {
+        font-size: 1.5rem;
+      }
+
+      .nav-links {
+        gap: 0.75rem;
+        font-size: 0.8rem;
+      }
+
+      .content {
+        padding: 25px 15px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .cabanas-grid {
+        gap: 30px;
+      }
+
+      .cabana-header {
+        padding: 25px 20px;
+      }
+
+      .cabana-header h3 {
+        font-size: 2rem;
+      }
+
+      .cabana-features {
+        padding: 20px;
+      }
+
+      .feature-item {
+        font-size: 0.95rem;
+        padding: 10px 0;
+      }
+
+      .servicios-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .servicio-item {
+        padding: 20px 15px;
+      }
+
+      .precios-card,
+      .politicas-card {
+        padding: 25px 20px;
+      }
+
+      .precio-item {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .precio-personas {
+        font-size: 1.1rem;
+      }
+
+      .precio-valor {
+        font-size: 1.3rem;
+      }
+
+      #slider-placeholder .content-box {
+        padding: 20px;
+      }
+
+      .wa-form {
+        padding: 20px;
+      }
+
+      .wa-actions {
+        flex-direction: column;
+      }
+
+      .wa-btn {
+        width: 100%;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-logo" href="#home">Cabañas <span>Emilia</span></a>
+      <nav class="nav-links">
+        <a href="#cabanas">CABAÑAS</a>
+        <a href="#servicios">SERVICIOS</a>
+        <a href="#precios">PRECIOS</a>
+        <a href="#gallery">GALERÍA</a>
+        <a href="#contact">CONTACTO</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="landing-container">
+    <div class="background">
+      <div class="background-slide active"></div>
+      <div class="background-slide"></div>
+      <div class="background-slide"></div>
+    </div>
+    <div class="background"></div>
+    <div class="content">
+      <h1 class="name">Emilia</h1>
+      <div class="divider"></div>
+      <p class="subtitle">Cabañas</p>
+      <p class="location">Agua de Oro - Córdoba</p>
+    </div>
+  </div>
+
+  <!-- Gallery -->
+  <section id="gallery" class="section anchor-offset">
+    <h3 class="section-title">Galería de Imágenes</h3>
+    <div class="gallery-grid" id="landingGallery"></div>
+
+    <div class="modal" id="landingModal">
+      <button class="modal-close" id="landingModalClose">×</button>
+      <div class="modal-counter" id="landingModalCounter"></div>
+      <button class="modal-nav prev" id="landingPrev">‹</button>
+      <div class="modal-content" id="landingModalContent"></div>
+      <button class="modal-nav next" id="landingNext">›</button>
+    </div>
+  </section>
+
+  <section id="home" class="section intro-section">
+    <div class="intro-overlay"></div>
+    <div class="container intro-content">
+      <h2 class="intro-title">Bienvenidos a las Sierras</h2>
+      <p class="intro-text">Disfrutá de un refugio en contacto con la naturaleza en Agua de Oro, Córdoba. Nuestras cabañas combinan confort, diseño y espacios al aire libre para una estadía inolvidable.</p>
+      <div style="text-align:center;">
+        <a class="btn-primary btn-large" href="#cabanas">Ver</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Cabañas -->
+  <section id="cabanas" class="section cabanas-section anchor-offset">
+    <div class="container">
+      <h2 class="section-title"></h2>
+      <p class="cabanas-intro">Dos espacios únicos diseñados para tu comodidad</p>
+      
+      <div class="cabanas-grid">
+        <!-- Cabaña 1 -->
+        <div class="cabana-card">
+          <div class="cabana-header">
+            <div class="cabana-icon">🏡</div>
+            <h3>Cabaña 1</h3>
+            <p class="cabana-capacity"></p>
+          </div>
+          <div class="cabana-features">
+            <div class="feature-item">
+              <span class="check">✓</span>
+              <span>Cama matrimonial</span>
+            </div>
+            <div class="feature-item">
+              <span class="check">✓</span>
+              <span>Futón cama plaza y media</span>
+            </div>
+            <div class="feature-item">
+              <span class="check">✓</span>
+              <span>TV 32"</span>
+            </div>
+            <div class="feature-item">
+              <span class="check">✓</span>
+              <span>Ventilador</span>
+            </div>
+            <div class="feature-item">
+              <span class="check">✓</span>
+              <span>Microondas</span>
+            </div>
+            <div class="feature-item">
+              <span class="check">✓</span>
+              <span>Anafe</span>
+            </div>
+            <div class="feature-item">
+              <span class="check">✓</span>
+              <span>Calefón eléctrico</span>
+            </div>
+            <div class="feature-item">
+              <span class="check">✓</span>
+              <span>Asador/disco</span>
+            </div>
+            <div class="feature-item">
+              <span class="check">✓</span>
+              <span>Pava eléctrica</span>
+            </div>
+            <div class="feature-item">
+              <span class="check">✓</span>
+              <span>Cocina equipada</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cabaña 2 -->
+        <div class="cabana-card">
+          <div class="cabana-header">
+            <div class="cabana-icon">🏠</div>
+            <h3>Cabaña 2</h3>
+            <p class="cabana-capacity"></p>
+          </div>
+          <div class="cabana-features">
+            <div class="feature-item">
+              <span class="check">✓</span>
+              <span>Cama matrimonial</span>
+            </div>
+            <div class="feature-item">
+              <span class="check">✓</span>
+              <span>Cama marinera</span>
+            </div>
+            <div class="feature-item">
+              <span class="check">✓</span>
+              <span>TV 32"</span>
+            </div>
+            <div class="feature-item">
+              <span class="check">✓</span>
+              <span>Ventilador</span>
+            </div>
+            <div class="feature-item">
+              <span class="check">✓</span>
+              <span>Microondas</span>
+            </div>
+            <div class="feature-item">
+              <span class="check">✓</span>
+              <span>Anafe</span>
+            </div>
+            <div class="feature-item">
+              <span class="check">✓</span>
+              <span>Calefón eléctrico</span>
+            </div>
+            <div class="feature-item">
+              <span class="check">✓</span>
+              <span>Asador/disco</span>
+            </div>
+            <div class="feature-item">
+              <span class="check">✓</span>
+              <span>Cocina equipada</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cabanas-cta">
+        <p>¿Querés conocer más detalles o consultar disponibilidad?</p>
+        <a class="btn-primary" href="#whatsapp">Consultar Ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios Generales -->
+  <section id="servicios" class="section servicios-section">
+    <div class="container">
+      <h2 class="section-title"></h2>
+      <p class="servicios-intro">Comodidades para disfrutar tu estadía</p>
+      
+      <div class="servicios-grid">
+        <div class="servicio-item">
+          <div class="servicio-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M3 13h18M3 17h18M6.5 9h11M4 21h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1Z"/>
+            </svg>
+          </div>
+          <h4>Pileta compartida</h4>
+        </div>
+        <div class="servicio-item">
+          <div class="servicio-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/>
+            </svg>
+          </div>
+          <h4>Wi-Fi</h4>
+        </div>
+        <div class="servicio-item">
+          <div class="servicio-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/>
+              <polyline points="17 2 12 7 7 2"/>
+            </svg>
+          </div>
+          <h4>DirecTV</h4>
+        </div>
+        <div class="servicio-item">
+          <div class="servicio-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <h4>Alarma</h4>
+        </div>
+        <div class="servicio-item">
+          <div class="servicio-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+              <line x1="6" y1="1" x2="6" y2="4"/>
+              <line x1="10" y1="1" x2="10" y2="4"/>
+              <line x1="14" y1="1" x2="14" y2="4"/>
+            </svg>
+          </div>
+          <h4>Desayuno seco</h4>
+        </div>
+        <div class="servicio-item">
+          <div class="servicio-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M5 17H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2M23 9v6a2 2 0 0 1-2 2h-2"/>
+              <path d="M5 9h14v6H5z"/>
+              <circle cx="7" cy="12" r="2"/>
+              <circle cx="17" cy="12" r="2"/>
+            </svg>
+          </div>
+          <h4>Cochera semi cubierta</h4>
+        </div>
+        <div class="servicio-item">
+          <div class="servicio-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2v20M17 7c-1.66 0-3 1.34-3 3v8c0 1.66 1.34 3 3 3h2c1.66 0 3-1.34 3-3v-8c0-1.66-1.34-3-3-3h-2zM5 7C3.34 7 2 8.34 2 10v8c0 1.66 1.34 3 3 3h2c1.66 0 3-1.34 3-3v-8c0-1.66-1.34-3-3-3H5z"/>
+            </svg>
+          </div>
+          <h4>Naturaleza</h4>
+        </div>
+        <div class="servicio-item">
+          <div class="servicio-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M8.5 14.5L12 11l3.5 3.5L21 9M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5"/>
+              <polyline points="12 22 12 12"/>
+            </svg>
+          </div>
+          <h4>Fogonero</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Precios y Políticas -->
+  <section id="precios" class="section precios-section anchor-offset">
+    <div class="container">
+      <h2 class="section-title">Precios y Políticas</h2>
+      
+      <div class="precios-container">
+        <div class="precios-card">
+          <h3>Tarifas por Noche</h3>
+          <div class="precio-item">
+            <span class="precio-personas">2 personas</span>
+            <span class="precio-valor">$45.000</span>
+          </div>
+          <div class="precio-item">
+            <span class="precio-personas">3 personas</span>
+            <span class="precio-valor">$55.000</span>
+          </div>
+          <div class="precio-item">
+            <span class="precio-personas">4 personas</span>
+            <span class="precio-valor">$60.000</span>
+          </div>
+        </div>
+
+        <div class="politicas-card">
+          <h3>Información Importante</h3>
+          <div class="politica-item">
+            <span class="politica-icon">💰</span>
+            <p><strong>Reserva:</strong> Se reserva con el 50% por medio de transferencia</p>
+          </div>
+          <div class="politica-item">
+            <span class="politica-icon">📅</span>
+            <p><strong>Estadía mínima:</strong> 3 noches</p>
+          </div>
+          <div class="politica-item">
+            <span class="politica-icon">🕐</span>
+            <p>Check-in: 12:00 hs | Check-out: 10:00 hs</p>
+          </div>
+          
+          <div class="politicas-importantes">
+            <h4>⚠️ Importante</h4>
+            <ul>
+              <li>No se podrán recibir visitas por respeto a los demás huéspedes</li>
+              <li>La seña no tiene devolución</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="precios-cta">
+        <a class="btn-primary" href="#whatsapp">Reservar Ahora</a>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="slider-placeholder" class="section">
+    <div>
+      <div class="slider-card">
+        <picture>
+          <img src="Imagenes/RioArbol.jpg" alt="Vista cabañas">
+        </picture>
+        <div class="overlay"></div>
+        <div class="content-box">
+          <h3>Imágenes destacadas</h3>
+          <p>Descubrí más</p>
+          <a class="btn-primary" href="#gallery">Ver</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="whatsapp" class="wa-section anchor-offset">
+    <div class="container wa-container">
+      <div class="wa-form">
+        <h3>Consulta por WhatsApp</h3>
+        <form id="waForm">
+          <div class="wa-field">
+            <label for="checkin">Fecha de entrada</label>
+            <input type="date" id="checkin" name="checkin" required>
+          </div>
+          <div class="wa-field">
+            <label for="checkout">Fecha de salida</label>
+            <input type="date" id="checkout" name="checkout" required>
+          </div>
+          <div class="wa-field">
+            <label for="guestPhone">Tu teléfono (opcional)</label>
+            <input type="text" id="guestPhone" name="guestPhone" placeholder="+54 9 351 ...">
+          </div>
+          <div class="wa-field">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" placeholder="Hola, quisiera consultar disponibilidad..."></textarea>
+          </div>
+          <div class="wa-actions">
+            <button type="submit" class="wa-btn">Enviar por WhatsApp</button>
+          </div>
+        </form>
+      </div>
+      <div class="wa-info">
+        <h4>Contacto</h4>
+        <p>También podés llamar directamente: <strong>+54 9 351 355-1313</strong></p>
+        <p>Responderemos a la brevedad con disponibilidad y tarifas.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <span class="footer-logo">Cabañas Emilia</span>
+        <p>Agua de Oro, Córdoba · El Descanso en contacto con la naturaleza.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/5493512015078" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#cabanas">Cabañas</a></li>
+          <li><a href="#gallery">Galería</a></li>
+          <li><a href="#slider-placeholder">Destacadas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p>Email: oeb13@hotmail.com</p>
+        <p>Tel: +54 9 351 355-1313</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">© <span id="year"></span> Cabañas Emilia – Todos los derechos reservados</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Background slideshow automático
+    (function(){
+      const slides = document.querySelectorAll('.background-slide');
+      let currentSlide = 0;
+
+      function changeSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+      }
+
+      // Cambiar cada 5 segundos
+      setInterval(changeSlide, 5000);
+    })();
+
+    // Galería
+    (function(){
+  // 1. REEMPLAZA ESTO CON TUS NOMBRES DE ARCHIVOS REALES
+  const images = [
+    { src: 'Imagenes/Mesablanca.jpg', title: 'Boda de ejemplo 1' },
+    { src: 'Imagenes/Comedor3.jpg', title: 'Evento corporativo' },
+    { src: 'Imagenes/Comedor1.jpg', title: 'Fiesta de cumple' },
+    { src: 'Imagenes/Cocina1.jpg', title: 'Imagen 4' },
+    { src: 'Imagenes/EmiliaDormi.jpg', title: 'Imagen 5' },
+    { src: 'Imagenes/Baño5.jpg', title: 'Imagen 6' },
+    { src: 'Imagenes/Baño4.jpg', title: 'Imagen 7' },
+    { src: 'Imagenes/AfueraBaul.jpg', title: 'Imagen 8' },
+    { src: 'Imagenes/VistaAdentro.jpg', title: 'Imagen 9' },
+    { src: 'Imagenes/Pileta2.jpg', title: 'Imagen 10' },
+    { src: 'Imagenes/Pileta4.jpg', title: 'Imagen 11' },
+    { src: 'Imagenes/VistaCostado.jpg', title: 'Imagen 12' }
+  ];
+
+  const galleryEl = document.getElementById('landingGallery');
+  const modal = document.getElementById('landingModal');
+  const modalContent = document.getElementById('landingModalContent');
+  const modalCounter = document.getElementById('landingModalCounter');
+  let currentIndex = 0;
+
+  // 2. GENERAR LA GALERÍA
+  images.forEach((img, i) => {
+    const item = document.createElement('div');
+    item.className = 'gallery-item';
+    item.innerHTML = `<img src="${img.src}" alt="${img.title}" loading="lazy">`;
+    item.addEventListener('click', () => openModal(i));
+    galleryEl.appendChild(item);
+  });
+
+  // 3. FUNCIONES DEL MODAL
+  function openModal(i){
+    currentIndex = i;
+    updateModal();
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Evita que la página se mueva al ver la foto
+  }
+
+  function closeModal(){
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+
+  function updateModal(){
+    const img = images[currentIndex];
+    modalContent.innerHTML = `<img src="${img.src}" alt="${img.title}">`;
+    modalCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+  }
+
+  // 4. EVENTOS DE BOTONES
+  document.getElementById('landingModalClose').addEventListener('click', closeModal);
+  
+  document.getElementById('landingPrev').addEventListener('click', (e) => {
+    e.stopPropagation(); // Evita que se cierre el modal al hacer clic en la flecha
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateModal();
+  });
+
+  document.getElementById('landingNext').addEventListener('click', (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex + 1) % images.length;
+    updateModal();
+  });
+
+  // Cerrar al hacer clic fuera de la imagen
+  modal.addEventListener('click', (e) => {
+    if(e.target === modal) closeModal();
+  });
+})();
+
+    // WhatsApp form
+    (function(){
+      const WHATSAPP_NUMBER = '5493512015078';
+      const form = document.getElementById('waForm');
+
+      function buildMessage(){
+        const c = document.getElementById('checkin').value;
+        const o = document.getElementById('checkout').value;
+        const phone = document.getElementById('guestPhone').value.trim();
+        const msg = document.getElementById('message').value.trim();
+        let text = 'Hola! Quisiera consultar disponibilidad';
+        if(c) text += ` desde ${c}`;
+        if(o) text += ` hasta ${o}`;
+        if(phone) text += `. Mi teléfono: ${phone}`;
+        if(msg) text += `. Mensaje: ${msg}`;
+        return text;
+      }
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const checkin = document.getElementById('checkin').value;
+        const checkout = document.getElementById('checkout').value;
+        if(checkin && checkout && checkin > checkout){
+          alert('La fecha de entrada no puede ser posterior a la de salida.');
+          return;
+        }
+        const text = buildMessage();
+        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+        window.open(url, '_blank');
+      });
+    })();
+  </script>
+</body>
+</html>
