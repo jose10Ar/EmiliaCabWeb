@@ -405,15 +405,15 @@
     }
 
     .background-slide:nth-child(1) {
-      background-image: url("imagenes/AfueraFlores.JPG");
+      background-image: url("Imagenes/AfueraFlores.jpg");
     }
 
     .background-slide:nth-child(2) {
-      background-image: url("imagenes/VistaPiedra.jpg");
+      background-image: url("Imagenes/VistaPiedra.jpg");
     }
 
     .background-slide:nth-child(3) {
-      background-image: url("imagenes/Pileta3.JPG");
+      background-image: url("Imagenes/Pileta3.jpg");
     }
 
     .background::before {
@@ -534,7 +534,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-image: url("imagenes/Afuera.jpg");
+      background-image: url("Imagenes/Afuera.jpg");
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -1447,24 +1447,13 @@
     </div>
   </section>
 
-  <section id="gallery" class="section anchor-offset">
-    <h3 class="section-title"></h3>
-    <div class="gallery-grid" id="landingGallery"></div>
 
-    <div class="modal" id="landingModal">
-      <button class="modal-close" id="landingModalClose">×</button>
-      <div class="modal-counter" id="landingModalCounter"></div>
-      <button class="modal-nav prev" id="landingPrev">‹</button>
-      <div class="modal-content" id="landingModalContent"></div>
-      <button class="modal-nav next" id="landingNext">›</button>
-    </div>
-  </section>
 
   <section id="slider-placeholder" class="section">
     <div>
       <div class="slider-card">
         <picture>
-          <img src="Imagenes/RioArbol.JPG" alt="Vista cabañas">
+          <img src="Imagenes/RioArbol.jpg" alt="Vista cabañas">
         </picture>
         <div class="overlay"></div>
         <div class="content-box">
@@ -1575,18 +1564,18 @@
     (function(){
   // 1. REEMPLAZA ESTO CON TUS NOMBRES DE ARCHIVOS REALES
   const images = [
-    { src: 'imagenes/Mesablanca.JPG', title: 'Boda de ejemplo 1' },
-    { src: 'imagenes/Comedor3.JPG', title: 'Evento corporativo' },
-    { src: 'imagenes/Comedor1.JPG', title: 'Fiesta de cumple' },
-    { src: 'imagenes/Cocina1.JPG', title: 'Imagen 4' },
-    { src: 'imagenes/EmiliaDormi.JPG', title: 'Imagen 5' },
-    { src: 'imagenes/Baño5.JPG', title: 'Imagen 6' },
-    { src: 'imagenes/Baño4.JPG', title: 'Imagen 7' },
-    { src: 'imagenes/AfueraBaul.JPG', title: 'Imagen 8' },
-    { src: 'imagenes/VistaAdentro.JPG', title: 'Imagen 9' },
-    { src: 'imagenes/Pileta2.JPG', title: 'Imagen 10' },
-    { src: 'imagenes/Pileta4.JPG', title: 'Imagen 11' },
-    { src: 'imagenes/VistaCostado.JPG', title: 'Imagen 12' }
+    { src: 'Imagenes/Mesablanca.jpg', title: 'Boda de ejemplo 1' },
+    { src: 'Imagenes/Comedor3.jpg', title: 'Evento corporativo' },
+    { src: 'Imagenes/Comedor1.jpg', title: 'Fiesta de cumple' },
+    { src: 'Imagenes/Cocina1.jpg', title: 'Imagen 4' },
+    { src: 'Imagenes/EmiliaDormi.jpg', title: 'Imagen 5' },
+    { src: 'Imagenes/Baño5.jpg', title: 'Imagen 6' },
+    { src: 'Imagenes/Baño4.jpg', title: 'Imagen 7' },
+    { src: 'Imagenes/AfueraBaul.jpg', title: 'Imagen 8' },
+    { src: 'Imagenes/VistaAdentro.jpg', title: 'Imagen 9' },
+    { src: 'Imagenes/Pileta2.jpg', title: 'Imagen 10' },
+    { src: 'Imagenes/Pileta4.jpg', title: 'Imagen 11' },
+    { src: 'Imagenes/VistaCostado.jpg', title: 'Imagen 12' }
   ];
 
   const galleryEl = document.getElementById('landingGallery');
@@ -1648,7 +1637,6 @@
     (function(){
       const WHATSAPP_NUMBER = '5493512015078';
       const form = document.getElementById('waForm');
-      const waCopy = document.getElementById('waCopy');
 
       function buildMessage(){
         const c = document.getElementById('checkin').value;
@@ -1674,18 +1662,6 @@
         const text = buildMessage();
         const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
         window.open(url, '_blank');
-      });
-
-      waCopy.addEventListener('click', function(){
-        const text = buildMessage();
-        if(navigator.clipboard){
-          navigator.clipboard.writeText(text).then(() => {
-            waCopy.textContent = 'Copiado ✓';
-            setTimeout(() => waCopy.textContent = 'Copiar mensaje', 1500);
-          }).catch(() => alert('No se pudo copiar al portapapeles.'));
-        } else {
-          alert(text);
-        }
       });
     })();
   </script>
