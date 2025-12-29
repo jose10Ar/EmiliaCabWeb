@@ -82,7 +82,7 @@
 
     /* SECCIÓN CABAÑAS */
     .cabanas-section {
-      background: linear-gradient(180deg, #ade9e0 0%, #ffffff 100%);
+      background: linear-gradient(180deg, #71e2d1 0%, #ffffff 100%);
     }
 
     .cabanas-intro {
@@ -130,7 +130,7 @@
 
     .cabana-header h3 {
       font-family: 'Great Vibes', cursive;
-      font-size: 2.5rem;
+      font-size: 2.0rem;
       margin: 10px 0;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     }
@@ -193,7 +193,7 @@
 
     /* SECCIÓN SERVICIOS */
     .servicios-section {
-      background: #ffffff;
+      background: #71e2d1;
     }
 
     .servicios-intro {
@@ -216,7 +216,7 @@
     .servicio-item {
       text-align: center;
       padding: 30px 20px;
-      background: white;
+      background: rgb(178, 239, 243);
       border-radius: 15px;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
       transition: all 0.3s;
@@ -403,18 +403,42 @@
     .background-slide.active {
       opacity: 1;
     }
-
+    /*
     .background-slide:nth-child(1) {
-      background-image: url("Imagenes/AfueraFlores.jpg");
+      background-image: url("Imagenes/optimized/afueraflores-1200.webp");            gpt eliminar
     }
 
     .background-slide:nth-child(2) {
-      background-image: url("Imagenes/VistaPiedra.jpg");
+      background-image: url("Imagenes/optimized/vistapiedra-1200.webp");
     }
 
     .background-slide:nth-child(3) {
-      background-image: url("Imagenes/Pileta3.jpg");
+      background-image: url("Imagenes/optimized/pileta3-1200.webp");
     }
+    */
+
+    .background-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height:inset: 0;
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+    }
+
+    .background-slide.active {
+     opacity: 1;
+    }
+
+    .background-slide img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    } 
 
     .background::before {
       content: '';
@@ -534,7 +558,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-image: url("Imagenes/Afuera.jpg");
+      background-image: url("Imagenes/optimized/afuera-1200.webp");
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -1002,6 +1026,11 @@
       }
 
       .intro-section {
+        background-attachment: scroll;
+      }
+
+
+      .intro-section {
         min-height: 50vh;
         padding: 80px 20px;
         background-attachment: scroll;
@@ -1159,22 +1188,37 @@
 
   <div class="landing-container">
     <div class="background">
-      <div class="background-slide active"></div>
-      <div class="background-slide"></div>
-      <div class="background-slide"></div>
+      <picture class="background-slide active">
+       <source srcset="Imagenes/optimized/afueraflores-600.webp" media="(max-width: 768px)">
+       <source srcset="Imagenes/optimized/afueraflores-1200.webp">
+       <img src="Imagenes/optimized/afueraflores-600.webp" alt="" loading="eager">
+      </picture>
+
+      <picture class="background-slide">
+       <source srcset="Imagenes/optimized/vistapiedra-600.webp" media="(max-width: 768px)">
+       <source srcset="Imagenes/optimized/vistapiedra-1200.webp">
+       <img src="Imagenes/optimized/vistapiedra-600.webp" alt="">
+      </picture>
+
+      <picture class="background-slide">
+       <source srcset="Imagenes/optimized/pileta3-600.webp" media="(max-width: 768px)">
+       <source srcset="Imagenes/optimized/pileta3-1200.webp">
+       <img src="Imagenes/optimized/pileta3-600.webp" alt="">
+      </picture>
     </div>
-    <div class="background"></div>
+
     <div class="content">
-      <h1 class="name">Emilia</h1>
-      <div class="divider"></div>
-      <p class="subtitle">Cabañas</p>
-      <p class="location">Agua de Oro - Córdoba</p>
+       <h1 class="name">Emilia</h1>
+       <div class="divider"></div>
+       <p class="subtitle">Cabañas</p>
+       <p class="location">AGUA DE ORO - CORDOBA</p>
     </div>
   </div>
 
+
   <!-- Gallery -->
   <section id="gallery" class="section anchor-offset">
-    <h3 class="section-title">Galería de Imágenes</h3>
+    <h3 class="section-title">Imágenes</h3>
     <div class="gallery-grid" id="landingGallery"></div>
 
     <div class="modal" id="landingModal">
@@ -1397,7 +1441,7 @@
   <!-- Precios y Políticas -->
   <section id="precios" class="section precios-section anchor-offset">
     <div class="container">
-      <h2 class="section-title">Precios y Políticas</h2>
+      <h2 class="section-title">Precios - Información</h2>
       
       <div class="precios-container">
         <div class="precios-card">
@@ -1453,7 +1497,9 @@
     <div>
       <div class="slider-card">
         <picture>
-          <img src="Imagenes/RioArbol.jpg" alt="Vista cabañas">
+          <source type="image/webp" srcset="Imagenes/optimized/rioarbol-400.webp 400w, Imagenes/optimized/rioarbol-800.webp 800w, Imagenes/optimized/rioarbol-1200.webp 1200w" sizes="100vw">
+          <source type="image/jpeg" srcset="Imagenes/optimized/rioarbol-400.jpg 400w, Imagenes/optimized/rioarbol-800.jpg 800w, Imagenes/optimized/rioarbol-1200.jpg 1200w" sizes="100vw">
+          <img src="Imagenes/optimized/rioarbol-800.jpg" alt="Vista cabañas" loading="lazy" width="1200" height="800">
         </picture>
         <div class="overlay"></div>
         <div class="content-box">
@@ -1560,22 +1606,52 @@
       setInterval(changeSlide, 5000);
     })();
 
+    function createGalleryImage(image) {
+      const baseName = image.src.split('/').pop().split('.')[0].toLowerCase();
+      const optimizedSrc = `Imagenes/optimized/${baseName}`;
+      
+      const item = document.createElement('div');
+      item.className = 'gallery-item';
+
+      item.innerHTML = `
+        <picture data-src="${optimizedSrc}">
+         <img
+           src="${optimizedSrc}-400.jpg"
+           alt="${image.title}"
+           loading="lazy"
+           decoding="async"
+           width="400"
+           height="300">
+        <picture>
+          
+      `;
+      return item;
+    }
+
     // Galería
     (function(){
   // 1. REEMPLAZA ESTO CON TUS NOMBRES DE ARCHIVOS REALES
   const images = [
-    { src: 'Imagenes/Mesablanca.jpg', title: 'Boda de ejemplo 1' },
-    { src: 'Imagenes/Comedor3.jpg', title: 'Evento corporativo' },
-    { src: 'Imagenes/Comedor1.jpg', title: 'Fiesta de cumple' },
-    { src: 'Imagenes/Cocina1.jpg', title: 'Imagen 4' },
-    { src: 'Imagenes/EmiliaDormi.jpg', title: 'Imagen 5' },
-    { src: 'Imagenes/Baño5.jpg', title: 'Imagen 6' },
-    { src: 'Imagenes/Baño4.jpg', title: 'Imagen 7' },
-    { src: 'Imagenes/AfueraBaul.jpg', title: 'Imagen 8' },
-    { src: 'Imagenes/VistaAdentro.jpg', title: 'Imagen 9' },
-    { src: 'Imagenes/Pileta2.jpg', title: 'Imagen 10' },
-    { src: 'Imagenes/Pileta4.jpg', title: 'Imagen 11' },
-    { src: 'Imagenes/VistaCostado.jpg', title: 'Imagen 12' }
+    { src: 'Imagenes/Afuera.jpg', title: 'Exterior' },
+    { src: 'Imagenes/AfueraFlores.jpg', title: 'Jardín y flores' },
+    { src: 'Imagenes/Pileta1.jpg', title: 'Pileta' },
+    { src: 'Imagenes/Pileta3.jpg', title: 'Pileta y deck' },
+    { src: 'Imagenes/Asador.jpg', title: 'Asador' },
+    { src: 'Imagenes/MEsaAfuera.jpg', title: 'Mesa en el jardín' },
+    { src: 'Imagenes/TranqueraDentro.jpg', title: 'Entrada a la propiedad' },
+    { src: 'Imagenes/VistaPiedra.jpg', title: 'Vista a las sierras' },
+    { src: 'Imagenes/RioArbol.jpg', title: 'Acceso al río' },
+    { src: 'Imagenes/PaisajeRio.jpeg', title: 'Paisaje del río' },
+    { src: 'Imagenes/Casarbol.jpg', title: 'Casa del arbol' },
+    { src: 'Imagenes/Comedor1.jpg', title: 'Comedor principal' },
+    { src: 'Imagenes/Cocina2.jpg', title: 'Cocina completa' },
+    { src: 'Imagenes/Dormi1.jpg', title: 'Dormitorio matrimonial' },
+    { src: 'Imagenes/Dormi2.jpg', title: 'Segundo dormitorio' },
+    { src: 'Imagenes/Baño1.jpg', title: 'Baño moderno' },
+    { src: 'Imagenes/VistaAdentro.jpg', title: 'Vista desde el living' },
+    { src: 'Imagenes/SillonVist.jpg', title: 'Living con vista' },
+    { src: 'Imagenes/ComedorB2.jpg', title: 'Comedor Cabaña 2' },
+    { src: 'Imagenes/DormiB1.jpg', title: 'Dormitorio Cabaña 2' }
   ];
 
   const galleryEl = document.getElementById('landingGallery');
@@ -1586,9 +1662,7 @@
 
   // 2. GENERAR LA GALERÍA
   images.forEach((img, i) => {
-    const item = document.createElement('div');
-    item.className = 'gallery-item';
-    item.innerHTML = `<img src="${img.src}" alt="${img.title}" loading="lazy">`;
+    const item = createGalleryImage(img);
     item.addEventListener('click', () => openModal(i));
     galleryEl.appendChild(item);
   });
@@ -1608,7 +1682,13 @@
 
   function updateModal(){
     const img = images[currentIndex];
-    modalContent.innerHTML = `<img src="${img.src}" alt="${img.title}">`;
+    const baseName = img.src.split('/').pop().split('.')[0].toLowerCase();
+    const optimizedSrc = `Imagenes/optimized/${baseName}`;
+    modalContent.innerHTML = `<picture>
+            <source type="image/webp" srcset="${optimizedSrc}-1200.webp">
+            <source type="image/jpeg" srcset="${optimizedSrc}-1200.jpg">
+            <img src="${optimizedSrc}-1200.jpg" alt="${img.title}" style="max-height: 80vh; object-fit: contain;">
+          </picture>`;
     modalCounter.textContent = `${currentIndex + 1} / ${images.length}`;
   }
 
@@ -1664,6 +1744,42 @@
         window.open(url, '_blank');
       });
     })();
+        /* === Lazy load REAL con IntersectionObserver === */
+      const galleryObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+
+       const picture = entry.target;
+       const base = picture.dataset.src;
+
+       picture.innerHTML = `
+        <source type="image/webp"
+         srcset="${base}-400.webp 400w, ${base}-800.webp 800w"
+         sizes="
+         (max-width: 480px) 100vw,
+         (max-width: 768px) 50vw,
+          250px
+         ">
+         <source type="image/jpeg"
+          srcset="${base}-400.jpg 400w, ${base}-800.jpg 800w"
+         sizes="
+          (max-width: 480px) 100vw,
+          (max-width: 768px) 50vw,
+          250px
+        ">
+      <img src="${base}-400.jpg">
+    `;
+
+    galleryObserver.unobserve(picture);
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  document
+    .querySelectorAll('.gallery-item picture[data-src]')
+    .forEach(picture => galleryObserver.observe(picture));
+});
+
   </script>
 </body>
 </html>
