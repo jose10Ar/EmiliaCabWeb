@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cabañas Emilia - Agua de Oro, Córdoba</title>
+  <meta name="description"
+    content="Cabañas Emilia en Agua de Oro, Córdoba. Un refugio en las sierras con pileta, río, asador y todas las comodidades para tu descanso. ¡Reserva tu estadía!">
+  <meta name="keywords"
+    content="Cabañas, Agua de Oro, Córdoba, Sierras Chicas, Alojamiento, Turismo, Pileta, Río, Descanso, Naturaleza">
+  <meta property="og:title" content="Cabañas Emilia - Agua de Oro">
+  <meta property="og:description"
+    content="Disfrutá de la naturaleza en nuestras cabañas equipadas en las sierras de Córdoba.">
+  <meta property="og:image" content="Imagenes/optimized/afuera-1200.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌲</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&display=swap"
+    rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -14,7 +27,8 @@
       box-sizing: border-box;
     }
 
-    body, html {
+    body,
+    html {
       width: 100%;
       height: 100%;
       overflow-x: hidden;
@@ -177,7 +191,7 @@
       text-align: center;
       margin-top: 50px;
       padding: 40px 20px;
-      background: linear-gradient(135deg, rgba(103, 201, 152, 0.1) 0%, rgba(78, 168, 118, 0.1) 100%);
+      background: linear-gradient(135deg, rgba(56, 201, 128, 0.801) 0%, rgba(78, 168, 118, 0.1) 100%);
       border-radius: 20px;
       max-width: 800px;
       margin-left: auto;
@@ -186,14 +200,17 @@
 
     .cabanas-cta p {
       font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-      color: #2c5282;
+      color: #afd1a2;
       margin-bottom: 20px;
       font-weight: 500;
     }
 
     /* SECCIÓN SERVICIOS */
     .servicios-section {
-      background: #71e2d1;
+      background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url("Imagenes/optimized/rioarbol-1200.webp");
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
     }
 
     .servicios-intro {
@@ -252,119 +269,136 @@
       background: linear-gradient(180deg, #f8fffe 0%, #ffffff 100%);
     }
 
-    .precios-container {
+    /* UNIFIED PANEL STYLES */
+    .unified-panel-container {
       max-width: 1000px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
-      gap: 40px;
       padding: 0 20px;
     }
 
-    .precios-card,
-    .politicas-card {
+    .unified-panel {
+      display: flex;
       background: white;
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-      border: 2px solid #e8f8f1;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
     }
 
-    .precios-card h3,
-    .politicas-card h3 {
+    .panel-left {
+      flex: 1;
+      background: linear-gradient(135deg, #4ea876 0%, #2b6cb0 100%);
+      padding: 50px 40px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .panel-left::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .panel-right {
+      flex: 1.2;
+      background: white;
+      padding: 50px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .panel-left h3 {
       font-family: 'Great Vibes', cursive;
-      font-size: 2.5rem;
-      color: #67c998;
+      font-size: 3rem;
+      margin-bottom: 40px;
       text-align: center;
-      margin-bottom: 30px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     }
 
-    .precio-item {
+    .panel-price-item {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px;
-      margin-bottom: 15px;
-      background: linear-gradient(135deg, #f8fffe 0%, #ffffff 100%);
-      border-radius: 12px;
-      border-left: 4px solid #67c998;
-    }
-
-    .precio-personas {
-      font-size: 1.2rem;
-      color: #2c5282;
-      font-weight: 600;
-    }
-
-    .precio-valor {
-      font-size: 1.5rem;
-      color: #67c998;
-      font-weight: bold;
-    }
-
-    .politica-item {
-      display: flex;
-      gap: 15px;
       padding: 20px 0;
-      border-bottom: 1px solid #f0f0f0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    .politica-item:last-of-type {
+    .panel-price-item:last-child {
       border-bottom: none;
     }
 
-    .politica-icon {
+    .panel-price-label {
       font-size: 1.2rem;
-      min-width: 40px;
+      font-weight: 500;
+      opacity: 0.9;
     }
 
-    .politica-item p {
+    .panel-price-value {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #71e2d1;
+    }
+
+    .panel-right h3 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
       color: #2c5282;
-      line-height: 1.6;
-      text-align: left;
-      margin: 0;
-      font-size: 1rem;
+      margin-bottom: 30px;
+      text-align: center;
     }
 
-    .politicas-importantes {
-      margin-top: 30px;
-      padding: 25px;
-      background: #fff3cd;
-      border-radius: 12px;
-      border-left: 4px solid #ffc107;
-    }
-
-    .politicas-importantes h4 {
-      color: #856404;
-      font-size: 1.2rem;
-      margin-bottom: 15px;
-    }
-
-    .politicas-importantes ul {
+    .panel-policy-list {
       list-style: none;
-      padding: 0;
+    }
+
+    .panel-policy-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 20px;
+      color: #4a5568;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .panel-icon {
+      color: #4ea876;
+      font-size: 1.4rem;
+      background: #f0fdf4;
+      padding: 8px;
+      border-radius: 50%;
+      min-width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .highlight-box {
+      margin-top: 20px;
+      background: #fff8e6;
+      border-left: 4px solid #f6ad55;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .highlight-box p {
       margin: 0;
-    }
-
-    .politicas-importantes li {
-      color: #856404;
-      padding: 8px 0;
-      padding-left: 25px;
-      position: relative;
-      line-height: 1.5;
-    }
-
-    .politicas-importantes li::before {
-      content: '•';
-      position: absolute;
-      left: 8px;
-      font-size: 1.2rem;
-      color: #ffc107;
+      color: #975a16;
+      font-size: 0.95rem;
+      text-align: left !important;
     }
 
     .precios-cta {
       text-align: center;
-      margin-top: 50px;
+      margin-top: 60px;
     }
 
     /* HERO SECTION RESPONSIVE */
@@ -403,7 +437,7 @@
     .background-slide.active {
       opacity: 1;
     }
-    
+
     .background-slide {
       position: absolute;
       top: 0;
@@ -415,7 +449,7 @@
     }
 
     .background-slide.active {
-     opacity: 1;
+      opacity: 1;
     }
 
     .background-slide img {
@@ -425,7 +459,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-    } 
+    }
 
     .background::before {
       content: '';
@@ -452,6 +486,7 @@
         opacity: 0;
         transform: translateY(30px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -481,10 +516,13 @@
     }
 
     @keyframes fadeInOut {
-      0%, 100% {
+
+      0%,
+      100% {
         opacity: 0.8;
         transform: scale(1);
       }
+
       50% {
         opacity: 1;
         transform: scale(1.05);
@@ -507,6 +545,7 @@
         opacity: 0;
         transform: translateX(-50px);
       }
+
       to {
         opacity: 0.95;
         transform: translateX(0);
@@ -523,10 +562,13 @@
     }
 
     @keyframes expand {
-      0%, 100% {
+
+      0%,
+      100% {
         width: min(250px, 80%);
         opacity: 0.7;
       }
+
       50% {
         width: min(300px, 90%);
         opacity: 1;
@@ -745,7 +787,7 @@
       padding: 40px 20px;
     }
 
-    #slider-placeholder > div {
+    #slider-placeholder>div {
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -1062,6 +1104,15 @@
       .wa-container {
         grid-template-columns: 1fr;
       }
+
+      .unified-panel {
+        flex-direction: column;
+      }
+
+      .panel-left,
+      .panel-right {
+        padding: 40px 25px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -1109,12 +1160,37 @@
       }
 
       .servicios-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 0 10px;
       }
 
       .servicio-item {
-        padding: 20px 15px;
+        padding: 15px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100px;
+      }
+
+      .servicio-icon {
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+        width: 32px;
+        height: 32px;
+      }
+
+      .servicio-icon svg {
+        width: 32px;
+        height: 32px;
+      }
+
+      .servicio-item h4 {
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin: 0;
+        line-height: 1.2;
       }
 
       .precios-card,
@@ -1159,6 +1235,7 @@
     }
   </style>
 </head>
+
 <body>
   <header class="site-header">
     <div class="container header-inner">
@@ -1176,49 +1253,37 @@
   <div class="landing-container">
     <div class="background">
       <picture class="background-slide active">
-      <source srcset="Imagenes/optimized/afueraflores-600.webp" media="(max-width: 768px)">
-      <source srcset="Imagenes/optimized/afueraflores-1200.webp">
-      <img
-        src="Imagenes/optimized/afueraflores-600.webp"
-        alt=""
-        loading="eager"
-        fetchpriority="high">
+        <source srcset="Imagenes/optimized/afueraflores-600.webp" media="(max-width: 768px)">
+        <source srcset="Imagenes/optimized/afueraflores-1200.webp">
+        <img src="Imagenes/optimized/afueraflores-600.webp" alt="" loading="eager" fetchpriority="high">
       </picture>
 
       <picture class="background-slide">
-       <source srcset="Imagenes/optimized/vistapiedra-600.webp" media="(max-width: 768px)">
-       <source srcset="Imagenes/optimized/vistapiedra-1200.webp">
-        <img
-          src="Imagenes/optimized/vistapiedra-600.webp"
-          alt=""
-          loading="eager"
-           fetchpriority="low">
-        </picture>
+        <source srcset="Imagenes/optimized/vistapiedra-600.webp" media="(max-width: 768px)">
+        <source srcset="Imagenes/optimized/vistapiedra-1200.webp">
+        <img src="Imagenes/optimized/vistapiedra-600.webp" alt="" loading="eager" fetchpriority="low">
+      </picture>
 
-          <picture class="background-slide">
-          <source srcset="Imagenes/optimized/pileta3-600.webp" media="(max-width: 768px)">
-          <source srcset="Imagenes/optimized/pileta3-1200.webp">
-      
-        <img
-          src="Imagenes/optimized/pileta3-600.webp"
-          alt=""
-          loading="eager"
-          fetchpriority="low">
-        </picture>
+      <picture class="background-slide">
+        <source srcset="Imagenes/optimized/pileta3-600.webp" media="(max-width: 768px)">
+        <source srcset="Imagenes/optimized/pileta3-1200.webp">
+
+        <img src="Imagenes/optimized/pileta3-600.webp" alt="" loading="eager" fetchpriority="low">
+      </picture>
     </div>
 
     <div class="content">
-       <h1 class="name">Emilia</h1>
-       <div class="divider"></div>
-       <p class="subtitle">Cabañas</p>
-       <p class="location">AGUA DE ORO - CORDOBA</p>
+      <h1 class="name">Emilia</h1>
+      <div class="divider"></div>
+      <p class="subtitle">Cabañas</p>
+      <p class="location">AGUA DE ORO - CORDOBA</p>
     </div>
   </div>
 
 
   <!-- Gallery -->
   <section id="gallery" class="section anchor-offset">
-    <h3 class="section-title">Imágenes</h3>
+    <h3 class="section-title"></h3>
     <div class="gallery-grid" id="landingGallery"></div>
 
     <div class="modal" id="landingModal">
@@ -1234,7 +1299,8 @@
     <div class="intro-overlay"></div>
     <div class="container intro-content">
       <h2 class="intro-title">Bienvenidos a las Sierras</h2>
-      <p class="intro-text">Disfrutá de un refugio en contacto con la naturaleza en Agua de Oro, Córdoba. Nuestras cabañas combinan confort, diseño y espacios al aire libre para una estadía inolvidable.</p>
+      <p class="intro-text">Disfrutá de un refugio en contacto con la naturaleza en Agua de Oro, Córdoba. Nuestras
+        cabañas combinan confort, diseño y espacios al aire libre para una estadía inolvidable.</p>
       <div style="text-align:center;">
         <a class="btn-primary btn-large" href="#cabanas">Ver</a>
       </div>
@@ -1246,7 +1312,7 @@
     <div class="container">
       <h2 class="section-title"></h2>
       <p class="cabanas-intro">Dos espacios únicos diseñados para tu comodidad</p>
-      
+
       <div class="cabanas-grid">
         <!-- Cabaña 1 -->
         <div class="cabana-card">
@@ -1348,8 +1414,7 @@
       </div>
 
       <div class="cabanas-cta">
-        <p>¿Querés conocer más detalles o consultar disponibilidad?</p>
-        <a class="btn-primary" href="#whatsapp">Consultar Ahora</a>
+        <p>Pura magia serrana, aquí el mundo va más lento. ¡Disfrutá!</p>
       </div>
     </div>
   </section>
@@ -1359,12 +1424,13 @@
     <div class="container">
       <h2 class="section-title"></h2>
       <p class="servicios-intro">Comodidades para disfrutar tu estadía</p>
-      
+
       <div class="servicios-grid">
         <div class="servicio-item">
           <div class="servicio-icon">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M3 13h18M3 17h18M6.5 9h11M4 21h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1Z"/>
+              <path
+                d="M3 13h18M3 17h18M6.5 9h11M4 21h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1Z" />
             </svg>
           </div>
           <h4>Pileta compartida</h4>
@@ -1372,7 +1438,7 @@
         <div class="servicio-item">
           <div class="servicio-icon">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/>
+              <path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01" />
             </svg>
           </div>
           <h4>Wi-Fi</h4>
@@ -1380,8 +1446,8 @@
         <div class="servicio-item">
           <div class="servicio-icon">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/>
-              <polyline points="17 2 12 7 7 2"/>
+              <rect x="2" y="7" width="20" height="15" rx="2" ry="2" />
+              <polyline points="17 2 12 7 7 2" />
             </svg>
           </div>
           <h4>DirecTV</h4>
@@ -1389,8 +1455,8 @@
         <div class="servicio-item">
           <div class="servicio-icon">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
             </svg>
           </div>
           <h4>Alarma</h4>
@@ -1398,10 +1464,10 @@
         <div class="servicio-item">
           <div class="servicio-icon">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
-              <line x1="6" y1="1" x2="6" y2="4"/>
-              <line x1="10" y1="1" x2="10" y2="4"/>
-              <line x1="14" y1="1" x2="14" y2="4"/>
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
+              <line x1="6" y1="1" x2="6" y2="4" />
+              <line x1="10" y1="1" x2="10" y2="4" />
+              <line x1="14" y1="1" x2="14" y2="4" />
             </svg>
           </div>
           <h4>Desayuno seco</h4>
@@ -1409,10 +1475,10 @@
         <div class="servicio-item">
           <div class="servicio-icon">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M5 17H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2M23 9v6a2 2 0 0 1-2 2h-2"/>
-              <path d="M5 9h14v6H5z"/>
-              <circle cx="7" cy="12" r="2"/>
-              <circle cx="17" cy="12" r="2"/>
+              <path d="M5 17H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2M23 9v6a2 2 0 0 1-2 2h-2" />
+              <path d="M5 9h14v6H5z" />
+              <circle cx="7" cy="12" r="2" />
+              <circle cx="17" cy="12" r="2" />
             </svg>
           </div>
           <h4>Cochera semi cubierta</h4>
@@ -1420,7 +1486,8 @@
         <div class="servicio-item">
           <div class="servicio-icon">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 2v20M17 7c-1.66 0-3 1.34-3 3v8c0 1.66 1.34 3 3 3h2c1.66 0 3-1.34 3-3v-8c0-1.66-1.34-3-3-3h-2zM5 7C3.34 7 2 8.34 2 10v8c0 1.66 1.34 3 3 3h2c1.66 0 3-1.34 3-3v-8c0-1.66-1.34-3-3-3H5z"/>
+              <path
+                d="M12 2v20M17 7c-1.66 0-3 1.34-3 3v8c0 1.66 1.34 3 3 3h2c1.66 0 3-1.34 3-3v-8c0-1.66-1.34-3-3-3h-2zM5 7C3.34 7 2 8.34 2 10v8c0 1.66 1.34 3 3 3h2c1.66 0 3-1.34 3-3v-8c0-1.66-1.34-3-3-3H5z" />
             </svg>
           </div>
           <h4>Naturaleza</h4>
@@ -1428,8 +1495,8 @@
         <div class="servicio-item">
           <div class="servicio-icon">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M8.5 14.5L12 11l3.5 3.5L21 9M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5"/>
-              <polyline points="12 22 12 12"/>
+              <path d="M8.5 14.5L12 11l3.5 3.5L21 9M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5" />
+              <polyline points="12 22 12 12" />
             </svg>
           </div>
           <h4>Fogonero</h4>
@@ -1442,46 +1509,56 @@
   <section id="precios" class="section precios-section anchor-offset">
     <div class="container">
       <h2 class="section-title">Precios - Información</h2>
-      
-      <div class="precios-container">
-        <div class="precios-card">
-          <h3>Tarifas por Noche</h3>
-          <div class="precio-item">
-            <span class="precio-personas">2 personas</span>
-            <span class="precio-valor">$45.000</span>
-          </div>
-          <div class="precio-item">
-            <span class="precio-personas">3 personas</span>
-            <span class="precio-valor">$55.000</span>
-          </div>
-          <div class="precio-item">
-            <span class="precio-personas">4 personas</span>
-            <span class="precio-valor">$60.000</span>
-          </div>
-        </div>
 
-        <div class="politicas-card">
-          <h3>Información Importante</h3>
-          <div class="politica-item">
-            <span class="politica-icon">💰</span>
-            <p><strong>Reserva:</strong> Se reserva con el 50% por medio de transferencia</p>
+      <div class="unified-panel-container">
+        <div class="unified-panel">
+
+          <!-- Lado Izquierdo: Precios -->
+          <div class="panel-left">
+            <h3>Tarifas por Noche</h3>
+
+            <div class="panel-price-item">
+              <span class="panel-price-label">2 Personas</span>
+              <span class="panel-price-value">$45.000</span>
+            </div>
+            <div class="panel-price-item">
+              <span class="panel-price-label">3 Personas</span>
+              <span class="panel-price-value">$55.000</span>
+            </div>
+            <div class="panel-price-item">
+              <span class="panel-price-label">4 Personas</span>
+              <span class="panel-price-value">$60.000</span>
+            </div>
           </div>
-          <div class="politica-item">
-            <span class="politica-icon">📅</span>
-            <p><strong>Estadía mínima:</strong> 3 noches</p>
-          </div>
-          <div class="politica-item">
-            <span class="politica-icon">🕐</span>
-            <p>Check-in: 12:00 hs | Check-out: 10:00 hs</p>
-          </div>
-          
-          <div class="politicas-importantes">
-            <h4>⚠️ Importante</h4>
-            <ul>
-              <li>No se podrán recibir visitas por respeto a los demás huéspedes</li>
-              <li>La seña no tiene devolución</li>
+
+          <!-- Lado Derecho: Políticas -->
+          <div class="panel-right">
+            <h3>Información</h3>
+            <ul class="panel-policy-list">
+              <li class="panel-policy-item">
+                <span class="panel-icon">💰</span>
+                <div>
+                  <strong>Reserva</strong><br>
+                  Se concreta con el 50% de seña vía transferencia bancaria.
+                </div>
+              </li>
+              <li class="panel-policy-item">
+                <span class="panel-icon">📅</span>
+                <div>
+                  <strong>Estadía mínima</strong><br>
+                  3 noches.
+                </div>
+              </li>
+              <li class="panel-policy-item">
+                <span class="panel-icon">🕒</span>
+                <div>
+                  <strong>Horarios</strong><br>
+                  Check-in: 12:00 hs | Check-out: 10:00 hs
+                </div>
+              </li>
             </ul>
           </div>
+
         </div>
       </div>
 
@@ -1497,8 +1574,12 @@
     <div>
       <div class="slider-card">
         <picture>
-          <source type="image/webp" srcset="Imagenes/optimized/rioarbol-400.webp 400w, Imagenes/optimized/rioarbol-800.webp 800w, Imagenes/optimized/rioarbol-1200.webp 1200w" sizes="100vw">
-          <source type="image/jpeg" srcset="Imagenes/optimized/rioarbol-400.jpg 400w, Imagenes/optimized/rioarbol-800.jpg 800w, Imagenes/optimized/rioarbol-1200.jpg 1200w" sizes="100vw">
+          <source type="image/webp"
+            srcset="Imagenes/optimized/rioarbol-400.webp 400w, Imagenes/optimized/rioarbol-800.webp 800w, Imagenes/optimized/rioarbol-1200.webp 1200w"
+            sizes="100vw">
+          <source type="image/jpeg"
+            srcset="Imagenes/optimized/rioarbol-400.jpg 400w, Imagenes/optimized/rioarbol-800.jpg 800w, Imagenes/optimized/rioarbol-1200.jpg 1200w"
+            sizes="100vw">
           <img src="Imagenes/optimized/rioarbol-800.jpg" alt="Vista cabañas" loading="lazy" width="1200" height="800">
         </picture>
         <div class="overlay"></div>
@@ -1514,7 +1595,9 @@
   <section id="whatsapp" class="wa-section anchor-offset">
     <div class="container wa-container">
       <div class="wa-form">
-        <h3>Consulta por WhatsApp</h3>
+        <div style="text-align: center; margin-bottom: 20px;">
+          <span class="site-logo" style="display: inline-block;">Cabañas <span>Emilia</span></span>
+        </div>
         <form id="waForm">
           <div class="wa-field">
             <label for="checkin">Fecha de entrada</label>
@@ -1538,9 +1621,25 @@
         </form>
       </div>
       <div class="wa-info">
-        <h4>Contacto</h4>
+        <h4>CONTACTO</h4>
         <p>También podés llamar directamente: <strong>+54 9 351 355-1313</strong></p>
         <p>Responderemos a la brevedad con disponibilidad y tarifas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ubicación -->
+  <section id="ubicacion" class="section anchor-offset">
+    <div class="container">
+      <h2 class="section-title"></h2>
+      <p style="text-align: center; margin-bottom: 30px;">Agua de Oro, Córdoba</p>
+      <div
+        style="width: 100%; height: 450px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13660.857642356868!2d-64.3005856!3d-31.0664265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432863925555555%3A0x6b4f7e2c9a9d9b0!2sAgua%20de%20Oro%2C%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
     </div>
   </section>
@@ -1553,17 +1652,20 @@
         <div class="social-links">
           <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
             </svg>
           </a>
           <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
             </svg>
           </a>
           <a href="https://wa.me/5493512015078" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
             </svg>
           </a>
         </div>
@@ -1592,7 +1694,7 @@
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Background slideshow automático
-    (function(){
+    (function () {
       const slides = document.querySelectorAll('.background-slide');
       let currentSlide = 0;
 
@@ -1609,7 +1711,7 @@
     function createGalleryImage(image) {
       const baseName = image.src.split('/').pop().split('.')[0].toLowerCase();
       const optimizedSrc = `Imagenes/optimized/${baseName}`;
-      
+
       const item = document.createElement('div');
       item.className = 'gallery-item';
 
@@ -1629,113 +1731,113 @@
     }
 
     // Galería
-    (function(){
-  // 1. REEMPLAZA ESTO CON TUS NOMBRES DE ARCHIVOS REALES
-  const images = [
-    { src: 'Imagenes/Afuera.jpg', title: 'Exterior' },
-    { src: 'Imagenes/AfueraFlores.jpg', title: 'Jardín y flores' },
-    { src: 'Imagenes/Pileta1.jpg', title: 'Pileta' },
-    { src: 'Imagenes/Pileta3.jpg', title: 'Pileta y deck' },
-    { src: 'Imagenes/Asador.jpg', title: 'Asador' },
-    { src: 'Imagenes/MEsaAfuera.jpg', title: 'Mesa en el jardín' },
-    { src: 'Imagenes/TranqueraDentro.jpg', title: 'Entrada a la propiedad' },
-    { src: 'Imagenes/VistaPiedra.jpg', title: 'Vista a las sierras' },
-    { src: 'Imagenes/RioArbol.jpg', title: 'Acceso al río' },
-    { src: 'Imagenes/PaisajeRio.jpeg', title: 'Paisaje del río' },
-    { src: 'Imagenes/Casarbol.jpg', title: 'Casa del arbol' },
-    { src: 'Imagenes/Comedor1.jpg', title: 'Comedor principal' },
-    { src: 'Imagenes/Cocina2.jpg', title: 'Cocina completa' },
-    { src: 'Imagenes/Dormi1.jpg', title: 'Dormitorio matrimonial' },
-    { src: 'Imagenes/Dormi2.jpg', title: 'Segundo dormitorio' },
-    { src: 'Imagenes/Baño1.jpg', title: 'Baño moderno' },
-    { src: 'Imagenes/VistaAdentro.jpg', title: 'Vista desde el living' },
-    { src: 'Imagenes/SillonVist.jpg', title: 'Living con vista' },
-    { src: 'Imagenes/ComedorB2.jpg', title: 'Comedor Cabaña 2' },
-    { src: 'Imagenes/DormiB1.jpg', title: 'Dormitorio Cabaña 2' }
-  ];
+    (function () {
+      // 1. REEMPLAZA ESTO CON TUS NOMBRES DE ARCHIVOS REALES
+      const images = [
+        { src: 'Imagenes/Afuera.jpg', title: 'Exterior' },
+        { src: 'Imagenes/AfueraFlores.jpg', title: 'Jardín y flores' },
+        { src: 'Imagenes/Pileta1.jpg', title: 'Pileta' },
+        { src: 'Imagenes/Pileta3.jpg', title: 'Pileta y deck' },
+        { src: 'Imagenes/Asador.jpg', title: 'Asador' },
+        { src: 'Imagenes/MEsaAfuera.jpg', title: 'Mesa en el jardín' },
+        { src: 'Imagenes/TranqueraDentro.jpg', title: 'Entrada a la propiedad' },
+        { src: 'Imagenes/VistaPiedra.jpg', title: 'Vista a las sierras' },
+        { src: 'Imagenes/RioArbol.jpg', title: 'Acceso al río' },
+        { src: 'Imagenes/PaisajeRio.jpeg', title: 'Paisaje del río' },
+        { src: 'Imagenes/Casarbol.jpg', title: 'Casa del arbol' },
+        { src: 'Imagenes/Comedor1.jpg', title: 'Comedor principal' },
+        { src: 'Imagenes/Cocina2.jpg', title: 'Cocina completa' },
+        { src: 'Imagenes/Dormi1.jpg', title: 'Dormitorio matrimonial' },
+        { src: 'Imagenes/Dormi2.jpg', title: 'Segundo dormitorio' },
+        { src: 'Imagenes/Baño1.jpg', title: 'Baño moderno' },
+        { src: 'Imagenes/VistaAdentro.jpg', title: 'Vista desde el living' },
+        { src: 'Imagenes/SillonVist.jpg', title: 'Living con vista' },
+        { src: 'Imagenes/ComedorB2.jpg', title: 'Comedor Cabaña 2' },
+        { src: 'Imagenes/DormiB1.jpg', title: 'Dormitorio Cabaña 2' }
+      ];
 
-  const galleryEl = document.getElementById('landingGallery');
-  const modal = document.getElementById('landingModal');
-  const modalContent = document.getElementById('landingModalContent');
-  const modalCounter = document.getElementById('landingModalCounter');
-  let currentIndex = 0;
+      const galleryEl = document.getElementById('landingGallery');
+      const modal = document.getElementById('landingModal');
+      const modalContent = document.getElementById('landingModalContent');
+      const modalCounter = document.getElementById('landingModalCounter');
+      let currentIndex = 0;
 
-  // 2. GENERAR LA GALERÍA
-  images.forEach((img, i) => {
-    const item = createGalleryImage(img);
-    item.addEventListener('click', () => openModal(i));
-    galleryEl.appendChild(item);
-  });
+      // 2. GENERAR LA GALERÍA
+      images.forEach((img, i) => {
+        const item = createGalleryImage(img);
+        item.addEventListener('click', () => openModal(i));
+        galleryEl.appendChild(item);
+      });
 
-  // 3. FUNCIONES DEL MODAL
-  function openModal(i){
-    currentIndex = i;
-    updateModal();
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Evita que la página se mueva al ver la foto
-  }
+      // 3. FUNCIONES DEL MODAL
+      function openModal(i) {
+        currentIndex = i;
+        updateModal();
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Evita que la página se mueva al ver la foto
+      }
 
-  function closeModal(){
-    modal.classList.remove('active');
-    document.body.style.overflow = 'auto';
-  }
+      function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
 
-  function updateModal(){
-    const img = images[currentIndex];
-    const baseName = img.src.split('/').pop().split('.')[0].toLowerCase();
-    const optimizedSrc = `Imagenes/optimized/${baseName}`;
-    modalContent.innerHTML = `<picture>
+      function updateModal() {
+        const img = images[currentIndex];
+        const baseName = img.src.split('/').pop().split('.')[0].toLowerCase();
+        const optimizedSrc = `Imagenes/optimized/${baseName}`;
+        modalContent.innerHTML = `<picture>
             <source type="image/webp" srcset="${optimizedSrc}-1200.webp">
             <source type="image/jpeg" srcset="${optimizedSrc}-1200.jpg">
             <img src="${optimizedSrc}-1200.jpg" alt="${img.title}" style="max-height: 80vh; object-fit: contain;">
           </picture>`;
-    modalCounter.textContent = `${currentIndex + 1} / ${images.length}`;
-  }
+        modalCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+      }
 
-  // 4. EVENTOS DE BOTONES
-  document.getElementById('landingModalClose').addEventListener('click', closeModal);
-  
-  document.getElementById('landingPrev').addEventListener('click', (e) => {
-    e.stopPropagation(); // Evita que se cierre el modal al hacer clic en la flecha
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    updateModal();
-  });
+      // 4. EVENTOS DE BOTONES
+      document.getElementById('landingModalClose').addEventListener('click', closeModal);
 
-  document.getElementById('landingNext').addEventListener('click', (e) => {
-    e.stopPropagation();
-    currentIndex = (currentIndex + 1) % images.length;
-    updateModal();
-  });
+      document.getElementById('landingPrev').addEventListener('click', (e) => {
+        e.stopPropagation(); // Evita que se cierre el modal al hacer clic en la flecha
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateModal();
+      });
 
-  // Cerrar al hacer clic fuera de la imagen
-  modal.addEventListener('click', (e) => {
-    if(e.target === modal) closeModal();
-  });
-})();
+      document.getElementById('landingNext').addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex + 1) % images.length;
+        updateModal();
+      });
+
+      // Cerrar al hacer clic fuera de la imagen
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+    })();
 
     // WhatsApp form
-    (function(){
+    (function () {
       const WHATSAPP_NUMBER = '5493512015078';
       const form = document.getElementById('waForm');
 
-      function buildMessage(){
+      function buildMessage() {
         const c = document.getElementById('checkin').value;
         const o = document.getElementById('checkout').value;
         const phone = document.getElementById('guestPhone').value.trim();
         const msg = document.getElementById('message').value.trim();
         let text = 'Hola! Quisiera consultar disponibilidad';
-        if(c) text += ` desde ${c}`;
-        if(o) text += ` hasta ${o}`;
-        if(phone) text += `. Mi teléfono: ${phone}`;
-        if(msg) text += `. Mensaje: ${msg}`;
+        if (c) text += ` desde ${c}`;
+        if (o) text += ` hasta ${o}`;
+        if (phone) text += `. Mi teléfono: ${phone}`;
+        if (msg) text += `. Mensaje: ${msg}`;
         return text;
       }
 
-      form.addEventListener('submit', function(e){
+      form.addEventListener('submit', function (e) {
         e.preventDefault();
         const checkin = document.getElementById('checkin').value;
         const checkout = document.getElementById('checkout').value;
-        if(checkin && checkout && checkin > checkout){
+        if (checkin && checkout && checkin > checkout) {
           alert('La fecha de entrada no puede ser posterior a la de salida.');
           return;
         }
@@ -1744,15 +1846,15 @@
         window.open(url, '_blank');
       });
     })();
-        /* === Lazy load REAL con IntersectionObserver === */
-      const galleryObserver = new IntersectionObserver(entries => {
+    /* === Lazy load REAL con IntersectionObserver === */
+    const galleryObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
+        if (!entry.isIntersecting) return;
 
-       const picture = entry.target;
-       const base = picture.dataset.src;
+        const picture = entry.target;
+        const base = picture.dataset.src;
 
-       picture.innerHTML = `
+        picture.innerHTML = `
         <source type="image/webp"
          srcset="${base}-400.webp 400w, ${base}-800.webp 800w"
          sizes="
@@ -1770,16 +1872,17 @@
       <img src="${base}-400.jpg">
     `;
 
-    galleryObserver.unobserve(picture);
-  });
-});
+        galleryObserver.unobserve(picture);
+      });
+    });
 
-document.addEventListener('DOMContentLoaded', () => {
-  document
-    .querySelectorAll('.gallery-item picture[data-src]')
-    .forEach(picture => galleryObserver.observe(picture));
-});
+    document.addEventListener('DOMContentLoaded', () => {
+      document
+        .querySelectorAll('.gallery-item picture[data-src]')
+        .forEach(picture => galleryObserver.observe(picture));
+    });
 
   </script>
 </body>
+
 </html>
