@@ -216,7 +216,7 @@
     .servicio-item {
       text-align: center;
       padding: 30px 20px;
-      background: rgb(178, 239, 243);
+      background: rgb(241, 240, 248);
       border-radius: 15px;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
       transition: all 0.3s;
@@ -403,26 +403,13 @@
     .background-slide.active {
       opacity: 1;
     }
-    /*
-    .background-slide:nth-child(1) {
-      background-image: url("Imagenes/optimized/afueraflores-1200.webp");            gpt eliminar
-    }
-
-    .background-slide:nth-child(2) {
-      background-image: url("Imagenes/optimized/vistapiedra-1200.webp");
-    }
-
-    .background-slide:nth-child(3) {
-      background-image: url("Imagenes/optimized/pileta3-1200.webp");
-    }
-    */
-
+    
     .background-slide {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height:inset: 0;
+      height: inset 0;
       opacity: 0;
       transition: opacity 2s ease-in-out;
     }
@@ -1189,22 +1176,35 @@
   <div class="landing-container">
     <div class="background">
       <picture class="background-slide active">
-       <source srcset="Imagenes/optimized/afueraflores-600.webp" media="(max-width: 768px)">
-       <source srcset="Imagenes/optimized/afueraflores-1200.webp">
-       <img src="Imagenes/optimized/afueraflores-600.webp" alt="" loading="eager">
+      <source srcset="Imagenes/optimized/afueraflores-600.webp" media="(max-width: 768px)">
+      <source srcset="Imagenes/optimized/afueraflores-1200.webp">
+      <img
+        src="Imagenes/optimized/afueraflores-600.webp"
+        alt=""
+        loading="eager"
+        fetchpriority="high">
       </picture>
 
       <picture class="background-slide">
        <source srcset="Imagenes/optimized/vistapiedra-600.webp" media="(max-width: 768px)">
        <source srcset="Imagenes/optimized/vistapiedra-1200.webp">
-       <img src="Imagenes/optimized/vistapiedra-600.webp" alt="">
-      </picture>
+        <img
+          src="Imagenes/optimized/vistapiedra-600.webp"
+          alt=""
+          loading="eager"
+           fetchpriority="low">
+        </picture>
 
-      <picture class="background-slide">
-       <source srcset="Imagenes/optimized/pileta3-600.webp" media="(max-width: 768px)">
-       <source srcset="Imagenes/optimized/pileta3-1200.webp">
-       <img src="Imagenes/optimized/pileta3-600.webp" alt="">
-      </picture>
+          <picture class="background-slide">
+          <source srcset="Imagenes/optimized/pileta3-600.webp" media="(max-width: 768px)">
+          <source srcset="Imagenes/optimized/pileta3-1200.webp">
+      
+        <img
+          src="Imagenes/optimized/pileta3-600.webp"
+          alt=""
+          loading="eager"
+          fetchpriority="low">
+        </picture>
     </div>
 
     <div class="content">
